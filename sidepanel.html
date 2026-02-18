@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Console</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+        <h2>Console Scripts</h2>
+        <div class="script-controls">
+            <select id="script-select">
+                <option value="">-- New Script --</option>
+            </select>
+            <button id="btn-delete" class="danger">Del</button>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="form-group">
+            <label for="script-name">Script Name</label>
+            <input type="text" id="script-name" placeholder="e.g. Auto Login">
+        </div>
+
+        <div class="form-group">
+            <label for="url-pattern">URL Pattern (Optional)</label>
+            <input type="text" id="url-pattern" placeholder="e.g. https://example.com/*">
+        </div>
+
+        <div class="form-group">
+            <label>Parameters <button id="btn-add-param" class="small">+ Add</button></label>
+            <div id="params-container">
+                <!-- Dynamic params here -->
+            </div>
+        </div>
+
+        <div class="editor-container">
+            <label for="code-editor">Code</label>
+            <textarea id="code-editor" spellcheck="false" placeholder="// Your Javascript code here...
+// Use params like: console.log(params.myKey);"></textarea>
+        </div>
+
+        <div class="action-bar">
+            <button id="btn-save">Save</button>
+            <button id="btn-run" class="primary">Run</button>
+        </div>
+
+        <div class="console-output">
+            <div class="console-header">
+                <span>Output</span>
+                <button id="btn-clear-console" class="small">Clear</button>
+            </div>
+            <div id="console-logs"></div>
+        </div>
+    </div>
+  </div>
+  <script src="sidepanel.js"></script>
+</body>
+</html>
